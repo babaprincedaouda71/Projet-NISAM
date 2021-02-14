@@ -1,0 +1,15 @@
+{% block new %}
+    <div class="sectiontitle">
+      <h6 class="heading">Déconexion</h6>
+    </div>
+    <div class="group">
+      <div class="one_half first">
+          <h2>Vous avez été déconnecté</h2>
+          <div class="border-top-pt-3">
+            <small class="text-muted">
+             <a class="ml-2" href="{% url 'admini:login' %}">Se connecter encore</a>
+            </small>
+          </div>
+      </div>
+    </div>
+{% endblock new %}

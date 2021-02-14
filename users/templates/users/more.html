@@ -1,0 +1,93 @@
+{% load static %}
+<!DOCTYPE HTML>
+<!--
+	Hielo by TEMPLATED
+	templated.co @templatedco
+	Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
+-->
+<html>
+	<head>
+		<title>About</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel="stylesheet" href="{% static 'base/assets/css/main.css' %}" />
+	</head>
+	<body class="subpage">
+
+		<!-- Header -->
+			<header id="header">
+				<div class="logo"><a href="{% url 'users:index' %}">NISAM</a></div>
+				<a href="#menu">Menu</a>
+			</header>
+
+		<!-- Nav -->
+			<nav id="menu">
+				<ul class="links">
+					<li><a href="{% url 'users:index' %}">Accueil</a></li>
+					<li><a href="{% url 'admini:login' %}">Admin</a></li>
+					<li><a href="{% url 'users:more' %}">Plus</a></li>
+				</ul>
+			</nav>
+
+		<!-- One -->
+			<section id="One" class="wrapper style3">
+				<div class="inner">
+					<header class="align-center">
+						<h2>A propos de NISAM	</h2>
+					</header>
+				</div>
+			</section>
+
+		<!-- Two -->
+			<section id="two" class="wrapper style2">
+				<div class="inner">
+					<div class="box">
+						<div class="content">
+							<header class="align-center">
+								<h2>A notre sujet</h2>
+							</header>
+							<p>L'Association des étudiants nigérians au Maroc (NISAM) a été créée le 19
+								Février 2004 en raison des difficultés rencontrées par les étudiants nigérians au quotidien au Maroc
+								qui invite et appelle à l'unité et à un esprit de solidarité, de compréhension et d'amitié à l'intérieur
+								la communauté des étudiants nigérians, l'ambassade du Nigéria au Maroc et d'autres
+								agences à l'intérieur et à l'extérieur du Maroc.
+							</p>
+
+							<p>La nécessité d'établir et de promouvoir une relation durable pour tous les futurs étudiants et
+								ceux déjà au Maroc pour assurer et encourager une bonne éthique de travail pour tous les étudiants
+								impliqués afin de contribuer positivement au développement de notre pays d'origine, le Nigéria.
+							</p>
+
+							<p>Cependant, en raison du nouveau développement et des changements au sein des étudiants nigérians en
+								ces dernières années, les cadres de la session académique 2020/2021 jugent donc nécessaire de
+								modifier la constitution.
+							</p>
+						</div>
+					</div>
+				</div>
+			</section>
+
+		<!-- Footer -->
+			<footer id="footer">
+				<div class="container">
+					<ul class="icons">
+						<li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+						<li><a href="https://web.facebook.com/nisamrabat/" class="icon fa-facebook" target="_blank"><span class="label">Facebook</span></a></li>
+						<li><a href="https://www.instagram.com/nisam_rabat/" class="icon fa-instagram" target="_blank"><span class="label">Instagram</span></a></li>
+						<li><a href="mailto:mainbrain02@gmail.com" class="icon fa-envelope-o"><span class="label">Email</span></a></li>
+					</ul>
+				</div>
+				<div class="copyright">
+					&copy; Baba Prince. All rights reserved.
+				</div>
+			</footer>
+
+		<!-- Scripts -->
+			<script src="{% static 'base/assets/js/jquery.min.js' %}"></script>
+			<script src="{% static 'base/assets/js/jquery.scrollex.min.js' %}"></script>
+			<script src="{% static 'base/assets/js/skel.min.js' %}"></script>
+			<script src="{% static 'base/assets/js/util.js' %}"></script>
+			<script src="{% static 'base/assets/js/main.js' %}"></script>
+
+	</body>
+</html>

@@ -1,0 +1,300 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>Administration</title>
+    <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
+    <!-- Bootstrap 3.3.2 -->
+    <link href="{% static 'admini/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet" type="text/css" />
+    <!-- FontAwesome 4.3.0 -->
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+    <!-- Ionicons 2.0.0 -->
+    <link href="http://code.ionicframework.com/ionicons/2.0.0/css/ionicons.min.css" rel="stylesheet" type="text/css" />
+    <!-- Theme style -->
+    <link href="{% static 'admini/dist/css/AdminLTE.min.css' %}" rel="stylesheet" type="text/css" />
+    <!-- AdminLTE Skins. Choose a skin from the css/skins
+         folder instead of downloading all of them to reduce the load. -->
+    <link href="{% static 'admini/dist/css/skins/_all-skins.min.css' %}" rel="stylesheet" type="text/css" />
+    <!-- iCheck -->
+    <link href="{% static 'admini/plugins/iCheck/flat/blue.css' %}" rel="stylesheet" type="text/css" />
+    <!-- Morris chart -->
+    <link href="{% static 'admini/plugins/morris/morris.css' %}" rel="stylesheet" type="text/css" />
+    <!-- jvectormap -->
+    <link href="{% static 'admini/plugins/jvectormap/jquery-jvectormap-1.2.2.css' %}" rel="stylesheet" type="text/css" />
+    <!-- Date Picker -->
+    <link href="{% static 'admini/plugins/datepicker/datepicker3.css' %}" rel="stylesheet" type="text/css" />
+    <!-- Daterange picker -->
+    <link href="{% static 'admini/plugins/daterangepicker/daterangepicker-bs3.css' %}" rel="stylesheet" type="text/css" />
+    <!-- bootstrap wysihtml5 - text editor -->
+    <link href="{% static 'admini/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css' %}" rel="stylesheet" type="text/css" />
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+        <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body class="skin-blue">
+    <div class="wrapper">
+
+      <header class="main-header">
+        <!-- Logo -->
+        <a href="index2.html" class="logo"><b>Administration</b></a>
+        <!-- Header Navbar: style can be found in header.less -->
+        <nav class="navbar navbar-static-top" role="navigation">
+          <!-- Sidebar toggle button-->
+          <a href="#" class="sidebar-toggle" data-toggle="offcanvas" role="button">
+            <span class="sr-only">Toggle navigation</span>
+          </a>
+          <div class="navbar-custom-menu">
+            <ul class="nav navbar-nav">
+              <!-- Messages: style can be found in dropdown.less-->
+              <li class="dropdown messages-menu">
+
+              </li>
+              <!-- User Account: style can be found in dropdown.less -->
+              <li class="dropdown user user-menu">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                  <img src="{% static 'admini/dist/img/user2-160x160.jpg' %}" class="user-image" alt="User Image"/>
+                  <span class="hidden-xs">{{request.user.boardmembers.nom}} {{request.user.boardmembers.prenoms}}</span>
+                </a>
+                <ul class="dropdown-menu">
+                  <!-- User image -->
+                  <li class="user-header">
+                    <img src="{% static 'admini/dist/img/user2-160x160.jpg' %}" class="img-circle" alt="User Image" />
+                    <p>
+                      {{request.user.boardmembers.nom}} {{request.user.boardmembers.prenoms}} - {{request.user.username}}
+                      <small>Membre depuis Nov. 2020</small>
+                    </p>
+                  </li>
+                  <!-- Menu Body -->
+                  <!-- <li class="user-body">
+                    <div class="col-xs-4 text-center">
+                      <a href="#">Followers</a>
+                    </div>
+                    <div class="col-xs-4 text-center">
+                      <a href="#">Sales</a>
+                    </div>
+                    <div class="col-xs-4 text-center">
+                      <a href="#">Friends</a>
+                    </div>
+                  </li> -->
+                  <!-- Menu Footer-->
+                  <li class="user-footer">
+                    <div class="pull-left">
+                      <a href="#" class="btn btn-default btn-flat">Profile</a>
+                    </div>
+                    <div class="pull-right">
+                      <a href="{% url 'admini:logout' %}" class="btn btn-default btn-flat">Logout</a>
+                    </div>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </nav>
+      </header>
+      <!-- Left side column. contains the logo and sidebar -->
+      <aside class="main-sidebar">
+        <!-- sidebar: style can be found in sidebar.less -->
+        <section class="sidebar">
+          <!-- Sidebar user panel -->
+          <div class="user-panel">
+            <div class="pull-left image">
+              <img src="{% static 'admini/dist/img/user2-160x160.jpg' %}" class="img-circle" alt="User Image" />
+            </div>
+            <div class="pull-left info">
+              <p>{{request.user.boardmembers.nom}} {{request.user.boardmembers.prenoms}}</p>
+
+              <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
+            </div>
+          </div>
+          <!-- search form -->
+          <form action="#" method="get" class="sidebar-form">
+            <div class="input-group">
+              <input type="text" name="q" class="form-control" placeholder="Search..."/>
+              <span class="input-group-btn">
+                <button type='submit' name='search' id='search-btn' class="btn btn-flat"><i class="fa fa-search"></i></button>
+              </span>
+            </div>
+          </form>
+          <!-- /.search form -->
+          <!-- sidebar menu: : style can be found in sidebar.less -->
+          <ul class="sidebar-menu">
+            <!-- <li class="active treeview">
+              <a href="#">
+                <i class="fa fa-dashboard"></i> <span>Dashboard</span> <i class="fa fa-angle-left pull-right"></i>
+              </a>
+            </li> -->
+            <!-- <li class="treeview">
+              <a href="#">
+                <i class="fa fa-files-o"></i>
+                <span>Layout Options</span>
+                <span class="label label-primary pull-right">4</span>
+              </a>
+              <ul class="treeview-menu">
+                <li><a href="admini/layout/top-nav.html"><i class="fa fa-circle-o"></i> Top Navigation</a></li>
+                <li><a href="admini/layout/boxed.html"><i class="fa fa-circle-o"></i> Boxed</a></li>
+                <li><a href="admini/layout/fixed.html"><i class="fa fa-circle-o"></i> Fixed</a></li>
+                <li><a href="admini/layout/collapsed-sidebar.html"><i class="fa fa-circle-o"></i> Collapsed Sidebar</a></li>
+              </ul>
+            </li> -->
+            <!-- <li>
+              <a href="admini/widgets.html">
+                <i class="fa fa-th"></i> <span>Widgets</span> <small class="label pull-right bg-green">new</small>
+              </a>
+            </li> -->
+            <!-- <li class="treeview">
+              <a href="#">
+                <i class="fa fa-pie-chart"></i>
+                <span>Charts</span>
+                <i class="fa fa-angle-left pull-right"></i>
+              </a>
+              <ul class="treeview-menu">
+                <li><a href="admini/charts/morris.html"><i class="fa fa-circle-o"></i> Morris</a></li>
+                <li><a href="admini/charts/flot.html"><i class="fa fa-circle-o"></i> Flot</a></li>
+                <li><a href="admini/charts/inline.html"><i class="fa fa-circle-o"></i> Inline charts</a></li>
+              </ul>
+            </li> -->
+            <!-- <li class="treeview">
+              <a href="#">
+                <i class="fa fa-laptop"></i>
+                <span>UI Elements</span>
+                <i class="fa fa-angle-left pull-right"></i>
+              </a>
+              <ul class="treeview-menu">
+                <li><a href="admini/UI/general.html"><i class="fa fa-circle-o"></i> General</a></li>
+                <li><a href="admini/UI/icons.html"><i class="fa fa-circle-o"></i> Icons</a></li>
+                <li><a href="admini/UI/buttons.html"><i class="fa fa-circle-o"></i> Buttons</a></li>
+                <li><a href="admini/UI/sliders.html"><i class="fa fa-circle-o"></i> Sliders</a></li>
+                <li><a href="admini/UI/timeline.html"><i class="fa fa-circle-o"></i> Timeline</a></li>
+                <li><a href="admini/UI/modals.html"><i class="fa fa-circle-o"></i> Modals</a></li>
+              </ul>
+            </li> -->
+            <!-- <li class="treeview">
+              <a href="#">
+                <i class="fa fa-edit"></i> <span>Forms</span>
+                <i class="fa fa-angle-left pull-right"></i>
+              </a>
+              <ul class="treeview-menu">
+                <li><a href="admini/forms/general.html"><i class="fa fa-circle-o"></i> General Elements</a></li>
+                <li><a href="admini/forms/advanced.html"><i class="fa fa-circle-o"></i> Advanced Elements</a></li>
+                <li><a href="admini/forms/editors.html"><i class="fa fa-circle-o"></i> Editors</a></li>
+              </ul>
+            </li> -->
+            <!-- <li class="treeview">
+              <a href="#">
+                <i class="fa fa-table"></i> <span>Tables</span>
+                <i class="fa fa-angle-left pull-right"></i>
+              </a>
+              <ul class="treeview-menu">
+                <li><a href="admini/tables/simple.html"><i class="fa fa-circle-o"></i> Simple tables</a></li>
+                <li><a href="admini/tables/data.html"><i class="fa fa-circle-o"></i> Data tables</a></li>
+              </ul>
+            </li> -->
+            <li>
+              <a href="{% url 'users:index' %}">
+                <i class="fa fa-home"></i> <span>Accueil</span>
+                <!-- <small class="label pull-right bg-red">3</small> -->
+              </a>
+            </li>
+            <li>
+              <a href="{% url 'admini:allMember' %}">
+                <i class="fa fa-database"></i> <span>Tous les membres</span>
+                <!-- <small class="label pull-right bg-red">3</small> -->
+              </a>
+            </li>
+            <li>
+              {% if user.boardmembers.statut == "Super Admin" %}
+              <a href="{% url 'admini:newMember' %}">
+                <i class="fa fa-plus"></i> <span>Nouveau membre</span>
+                <!-- <small class="label pull-right bg-red">3</small> -->
+              </a>
+              {% endif %}
+              {% if user.boardmembers.statut == "Treasurer" or user.boardmembers.statut == "Super Admin" %}
+              <a href="{% url 'admini:newPurchase' %}">
+                <i class="fa fa-plus"></i> <span>Nouvel Achat</span>
+                <!-- <small class="label pull-right bg-red">3</small> -->
+              </a>
+              <a href="{% url 'admini:allPurchase' %}">
+              <i class="fa fa-database"></i> <span>Tous les Achats</span>
+              </a>
+              {% endif %}
+              {% if user.boardmembers.statut == "Secretary" or user.boardmembers.statut == "Super Admin" %}
+              <a href="{% url 'admini:allMeeting' %}">
+                <i class="fa fa-database"></i> <span>Toutes les reunions</span>
+                <!-- <small class="label pull-right bg-red">3</small> -->
+              </a>
+              <a href="{% url 'admini:newMeeting' %}">
+                <i class="fa fa-plus"></i> <span>Nouveau CR</span>
+                <!-- <small class="label pull-right bg-red">3</small> -->
+              </a>
+              {% endif %}
+            </li>
+
+            <li><a href="documentation/index.html"><i class="fa fa-book"></i> Documentation</a></li>
+          </ul>
+        </section>
+        <!-- /.sidebar -->
+      </aside>
+
+      <!-- Right side column. Contains the navbar and content of the page -->
+      <div class="content-wrapper">
+        {% block new %}
+        {% endblock new %}
+      </div><!-- /.content-wrapper -->
+
+
+
+      <footer class="main-footer">
+        <div class="pull-right hidden-xs">
+          <b>Version</b> 1.0
+        </div>
+        <strong>Copyright &copy; 2020-2021 <a href="http://almsaeedstudio.com">Baba Prince</a>.</strong> All rights reserved.
+      </footer>
+    </div><!-- ./wrapper -->
+
+    <!-- jQuery 2.1.3 -->
+    <script src="{% static 'admini/plugins/jQuery/jQuery-2.1.3.min.js' %}"></script>
+    <!-- jQuery UI 1.11.2 -->
+    <script src="http://code.jquery.com/ui/1.11.2/jquery-ui.min.js" type="text/javascript"></script>
+    <!-- Resolve conflict in jQuery UI tooltip with Bootstrap tooltip -->
+    <script>
+      $.widget.bridge('uibutton', $.ui.button);
+    </script>
+    <!-- Bootstrap 3.3.2 JS -->
+    <script src="{% static 'admini/bootstrap/js/bootstrap.min.js' %}" type="text/javascript"></script>
+    <!-- Morris.js charts -->
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"></script>
+    <script src="{% static 'admini/plugins/morris/morris.min.js' %}" type="text/javascript"></script>
+    <!-- Sparkline -->
+    <script src="{% static 'admini/plugins/sparkline/jquery.sparkline.min.js' %}" type="text/javascript"></script>
+    <!-- jvectormap -->
+    <script src="{% static 'admini/plugins/jvectormap/jquery-jvectormap-1.2.2.min.js' %}" type="text/javascript"></script>
+    <script src="{% static 'admini/plugins/jvectormap/jquery-jvectormap-world-mill-en.js' %}" type="text/javascript"></script>
+    <!-- jQuery Knob Chart -->
+    <script src="{% static 'admini/plugins/knob/jquery.knob.js' %}" type="text/javascript"></script>
+    <!-- daterangepicker -->
+    <script src="{% static 'admini/plugins/daterangepicker/daterangepicker.js' %}" type="text/javascript"></script>
+    <!-- datepicker -->
+    <script src="{% static 'admini/plugins/datepicker/bootstrap-datepicker.js' %}" type="text/javascript"></script>
+    <!-- Bootstrap WYSIHTML5 -->
+    <script src="{% static 'admini/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js' %}" type="text/javascript"></script>
+    <!-- iCheck -->
+    <script src="{% static 'admini/plugins/iCheck/icheck.min.js' %}" type="text/javascript"></script>
+    <!-- Slimscroll -->
+    <script src="{% static 'admini/plugins/slimScroll/jquery.slimscroll.min.js' %}" type="text/javascript"></script>
+    <!-- FastClick -->
+    <script src="{% static 'admini/plugins/fastclick/fastclick.min.js' %}"></script>
+    <!-- AdminLTE App -->
+    <script src="{% static 'admini/dist/js/app.min.js' %}" type="text/javascript"></script>
+
+    <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
+    <script src="{% static 'admini/dist/js/admini/dashboard.js' %}" type="text/javascript"></script>
+
+    <!-- AdminLTE for demo purposes -->
+    <script src="{% static 'admini/dist/js/demo.js' %}" type="text/javascript"></script>
+  </body>
+</html>

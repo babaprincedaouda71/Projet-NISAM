@@ -1,0 +1,18 @@
+{% extends "admini/loginBase.html" %}
+{% load crispy_forms_tags %}
+{% block new %}
+        <div class="box-header">
+          <h3 class="box-title">Connexion</h3>
+        </div><!-- /.box-header -->
+        <form role="form" class="" action="" method="POST">
+          {% csrf_token %}
+          <div class="box-body">
+            <div class="form-group">
+              {{ form|crispy }}
+            </div>
+          </div>
+          <div class="box-footer">
+            <input type="submit" class="btn btn-primary" name="" value="Valider">
+          </div>
+        </form>
+{% endblock new %}

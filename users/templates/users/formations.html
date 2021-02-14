@@ -1,0 +1,126 @@
+{% load static %}
+<!DOCTYPE HTML>
+<!--
+	Hielo by TEMPLATED
+	templated.co @templatedco
+	Released for free under the Creative Commons Attribution 3.0 license (templated.co/license)
+-->
+<html>
+	<head>
+		<title>About</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel="stylesheet" href="{% static 'base/assets/css/main.css' %}" />
+	</head>
+	<body class="subpage">
+
+		<!-- Header -->
+			<header id="header">
+				<div class="logo"><a href="{% url 'users:index' %}">NISAM</a></div>
+				<a href="#menu">Menu</a>
+			</header>
+
+		<!-- Nav -->
+			<nav id="menu">
+				<ul class="links">
+					<li><a href="{% url 'users:index' %}">Accueil</a></li>
+					<li><a href="{% url 'admini:login' %}">Admin</a></li>
+					<li><a href="{% url 'users:more' %}">Plus</a></li>
+				</ul>
+			</nav>
+
+		<!-- One -->
+			<section id="One" class="wrapper style3">
+				<div class="inner">
+					<header class="align-center">
+						<!-- <p>Eleifend vitae urna</p> -->
+						<h2>A propos de NISAM</h2>
+					</header>
+				</div>
+			</section>
+
+		<!-- Two -->
+			<section id="two" class="wrapper style2">
+				<div class="inner">
+					<div class="box">
+						<div class="content">
+							<header class="align-center">
+								<!-- <p>maecenas sapien feugiat ex purus</p> -->
+								<h2>Formations</h2>
+							</header>
+
+              <!-- <h4>Alternate</h4> -->
+              <div class="table-wrapper">
+                <table class="alt">
+                  <thead>
+                    <tr>
+                      <th>Établissements</th>
+                      <th>Formations</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>EST</td>
+                      <td>
+                        Génie Électrtique <br>
+                        Génie Informatique <br>
+                        Génie Mécanique <br>
+                        Génie des Procédés <br>
+                        Technique de Management
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>ENSEM</td>
+                      <td>Vis ac commodo adipiscing arcu aliquet.</td>
+                    </tr>
+                    <tr>
+                      <td>FST</td>
+                      <td> Morbi faucibus arcu accumsan lorem. <br></td>
+                    </tr>
+                    <tr>
+                      <td>ENSA</td>
+                      <td>Vitae integer tempus condimentum.</td>
+                    </tr>
+                    <tr>
+                      <td>ENSAM</td>
+                      <td>Ante turpis integer aliquet porttitor.</td>
+                    </tr>
+                  </tbody>
+                  <!-- <tfoot>
+                    <tr>
+                      <td colspan="2"></td>
+                      <td>100.00</td>
+                    </tr>
+                  </tfoot> -->
+                </table>
+              </div>
+
+						</div>
+					</div>
+				</div>
+			</section>
+
+		<!-- Footer -->
+			<footer id="footer">
+				<div class="container">
+					<ul class="icons">
+						<li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+						<li><a href="https://web.facebook.com/nisamrabat/" class="icon fa-facebook" target="_blank"><span class="label">Facebook</span></a></li>
+						<li><a href="https://www.instagram.com/nisam_rabat/" class="icon fa-instagram" target="_blank"><span class="label">Instagram</span></a></li>
+						<li><a href="mailto:mainbrain02@gmail.com" class="icon fa-envelope-o"><span class="label">Email</span></a></li>
+					</ul>
+				</div>
+				<div class="copyright">
+					&copy; Baba Prince. All rights reserved.
+				</div>
+			</footer>
+
+		<!-- Scripts -->
+			<script src="{% static 'base/assets/js/jquery.min.js' %}"></script>
+			<script src="{% static 'base/assets/js/jquery.scrollex.min.js' %}"></script>
+			<script src="{% static 'base/assets/js/skel.min.js' %}"></script>
+			<script src="{% static 'base/assets/js/util.js' %}"></script>
+			<script src="{% static 'base/assets/js/main.js' %}"></script>
+
+	</body>
+</html>
